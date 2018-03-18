@@ -35,7 +35,7 @@ public class InputHandler {
 	}
 	
 	private void print(String string) {
-		System.out.println(string);
+		stream.println(string);
 		
 	}
 
