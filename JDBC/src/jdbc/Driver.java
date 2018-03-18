@@ -49,6 +49,7 @@ public class Driver {
 	
 	
 	public String addApparat(String Navn, String Beskrivelse) {
+		System.out.println("Kom hit hvertfall");
 		try {
 			return executeInsertQuery(Queries.INSERT_APPARAT(Navn, Beskrivelse));
 		}
