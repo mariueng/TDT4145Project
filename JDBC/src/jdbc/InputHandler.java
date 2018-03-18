@@ -61,7 +61,7 @@ public class InputHandler {
 
 	private void addHandler(String[] token) {
 		if (token[1].equals("apparat")) {
-			print(driver.addApparat(token[2], token[3]));
+			driver.addApparat(token[2], token[3]);
 		} else if (token[1].equals("friovelse")) {
 			print(driver.addFriOvelse(token[2], token[3]));
 		} else if (token[1].equals("fastovelse")) {
