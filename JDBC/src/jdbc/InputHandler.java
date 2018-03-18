@@ -32,7 +32,6 @@ public class InputHandler {
 		}
 	}
 	
-	
 	private void print(String string) {
 		stream.println(string);
 		
