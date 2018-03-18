@@ -68,5 +68,11 @@ public final class Queries {
 	}
 	
 	
+	//Henter N siste treningsøkter, med informasjon
+	public static String GET_N_LAST_TRENINGSOKT(int n) {
+		return "SELECT * FROM treningsoekt ORDER BY DatoTidspunkt DESC LIMIT " + n + ";";
+		
+	}
+	
 	
 }
