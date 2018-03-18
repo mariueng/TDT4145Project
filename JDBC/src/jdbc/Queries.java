@@ -13,6 +13,11 @@ public final class Queries {
 		return "SELECT * FROM apparat WHERE ApparatID LIKE " + id;
 	}
 	
+	//Henter apparat gitt navn
+	public static String GET_APPARAT_BY_NAME(String navn) {
+		return "SELECT * FROM apparat WHERE Navn LIKE \"" + navn + "\";";
+	}
+	
 	//Setter inn nytt apparat med gitt navn og beskrivelse i tabellen. Id blir autogenerert i databasen
 	public static String INSERT_APPARAT(String navn, String beskrivelse) {
 		return "INSERT INTO apparat (Navn, Beskrivelse) VALUES (\"" + navn + "\", \"" + beskrivelse +"\")";
