@@ -8,6 +8,11 @@ public final class Queries {
 	 * ================================ APPARATER ===================================
 	 */
 	
+	//Henter alle apparater
+	public static String GET_ALL_APPARAT() {
+		return "SELECT Navn FROM apparat";
+	}
+	
 	//Henter apparat gitt apparatId
 	public static final String GET_APPARAT_BY_ID(int id) {
 		return "SELECT * FROM apparat WHERE ApparatID LIKE " + id;
@@ -34,6 +39,11 @@ public final class Queries {
 	 * =============================== ØVELSER =====================================
 	 * Før enhver registrering av øvelse på NEW_OVELSE utføres først for å lage en entitet av superklassen.
 	 */
+	
+	//Henter alle øvelser og returnerer navn
+	public static String GET_ALL_OVELSE() {
+		return "(SELECT Navn FROM ovelsefastmontert) UNION (SELECT Navn FROM ovelsefriovelse);";
+	}
 	
 	//Lager en ny øvelse, dette er i prinsippet kun et heltall, men tabellen er brukt for å knytte ulike typer øvelser opp mot en superklasse
 	public static String NEW_OVELSE() {
@@ -74,6 +84,12 @@ public final class Queries {
 	/*
 	 * ================================= TRENINGSØKTER ===================================
 	 */
+	
+	//Henter alle treningsøkter returnerer oektID og Dato
+	public static String GET_ALL_TRENINGSOEKT() {
+		return "SELECT oektID, DatoTidspunkt FROM treningsoekt";
+	}
+	
 	
 	//Setter inn en ny treningsøkt i databasen gitt tidspunkt, varighet, informasjom form og prestasjon
 	public static String INSERT_TRENINGSOKT(Timestamp datoTid, int varighetMin, String informasjon, int form, int prestasjon) {
