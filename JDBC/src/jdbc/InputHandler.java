@@ -31,7 +31,8 @@ public class InputHandler {
 			print("Type 'help' for more information");
 		}
 	}
-
+	
+	
 	private void print(String string) {
 		stream.println(string);
 		
