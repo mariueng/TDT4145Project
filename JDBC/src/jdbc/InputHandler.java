@@ -16,14 +16,24 @@ public class InputHandler {
 	}
 	
 	public void handleInput(String input) {
-		String[] token = input.split(" ");
+		String[] token = input.split("_");
 		if (token[0].equals("add")) {
 			addHandler(token);
 		} else if (token[0].equals("search")) {
 			searchHandler(token);
 		} else if (token[0].equals("make")) {
 			makeHandler(token);
+		} else if (token[0].equals("show")) {
+			
+		} else if (token[0].equals("help")) {
+			
+		} else {
+			print("Type help for help");
 		}
+	}
+
+	private void print(String string) {
+		stream.println(string);
 		
 	}
 
@@ -37,8 +47,8 @@ public class InputHandler {
 			//handler.handle(n siste treningsøkter)
 		} else if (token[1].equals("ovelse")) {
 			//handler.handle(min,max)
-		} else if (token[1].equals("")) {
-			
+		} else if (token[1].equals("kategori")) {
+			//handler.handle(navn)
 		}
 		
 	}
@@ -46,6 +56,7 @@ public class InputHandler {
 	private void addHandler(String[] token) {
 		if (token[1].equals("apparat")) {
 			//
+			System.out.println("Apparat");
 		} else if (token[1].equals("friovelse")) {
 			//
 		} else if (token[1].equals("fastovelse")) {
