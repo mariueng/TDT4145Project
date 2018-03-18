@@ -42,6 +42,16 @@ public final class Queries {
 				+ "((SELECT max(OvelseID) FROM Ovelse), \"" + navn + "\", \"" + kg + "\", \"" + sett + "\", " + "\" " + apparatId +"\");";
 	}
 	
+	//Lager en ny kategori
+	public static String INSERT_KATEGORI(String navn, String beskrivelse) {
+		return "INSERT INTO kategori (Navn, Beskrivelse) VALUES (\"" + navn + "\",\"" + beskrivelse + "\");";
+	}
+	
+	//Knytte en øvelse til en kategori
+	public static String CONNECT_OVELSE_KATEGORI(int ovelseId, String kategorinavn) {
+		return "INSERT INTO ovelseinngaarikategori (OvelseID, Navn) VALUES (" + ovelseId + ",\"" + kategorinavn + "\");";
+	}
+	
 	/*
 	 * ================================= TRENINGSØKTER ===================================
 	 */
@@ -51,5 +61,18 @@ public final class Queries {
 		return "INSERT INTO treningsoekt (DatoTidspunkt, Varighetminutter, Informasjon, Form, Prestasjon) VALUES"
 				+ "(\'" + datoTid + "\', " + varighetMin + ", " + "\"" + informasjon + "\", " + form + ", " + prestasjon +");";
 	}
+	
+	//Knytter en øvelse til en økt slik det kan utforskes hvilke øvelser som har inngått i hvilke treningsøkter
+	public static String CONNECT_TRENINGSOKT_OVELSE(int treningsoktId, int ovelseId) {
+		return "INSERT INTO treningsoktovelse (OektID, OvelseID) VALUES (" + treningsoktId + "," + ovelseId + ");";
+	}
+	
+	
+	//Henter N siste treningsøkter, med informasjon
+	public static String GET_N_LAST_TRENINGSOKT(int n) {
+		return "SELECT * FROM treningsoekt ORDER BY DatoTidspunkt DESC LIMIT " + n + ";";
+		
+	}
+	
 	
 }
