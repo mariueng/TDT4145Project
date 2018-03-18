@@ -12,10 +12,19 @@ public class Driver {
 		myStmt = myConn.createStatement();
 	}
 	
-	public ResultSet executeQuery(String query) throws SQLException {
+	public ResultSet executeReturnQuery(String query) throws SQLException {
 		return this.myStmt.executeQuery(query);
 	}
-
+	public void executeUpdateQuery(String query) throws SQLException {
+		this.myStmt.executeUpdate(query);
+	}
+	public void executeInsertQuery(String query) throws SQLException {
+		this.myStmt.executeQuery(query);
+	}
+	public void addApparat(String query) {
+		
+	}
+	
 	public static void main(String[] args) {
 		
 		try {
@@ -23,7 +32,7 @@ public class Driver {
 			
 			//Queries
 			ResultSet myRs;
-			myRs = driver.executeQuery("select * from apparat");
+			myRs = driver.executeReturnQuery("select * from apparat");
 			
 			//Process result
 			while(myRs.next()) {
@@ -37,7 +46,7 @@ public class Driver {
 
 	}
 	
-	// --------------------------------QUERIES-----------------------------------------------------------//
+	// --------------------------------QUERIES IN SQL-FORMAT TEXT CAN BE FOUND IN QUERIES.JAVA---------------//
 	
 	
 
