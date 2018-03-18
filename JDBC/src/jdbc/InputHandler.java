@@ -25,7 +25,7 @@ public class InputHandler {
 		} else if (token[0].equals("make")) {
 			makeHandler(token);
 		} else if (token[0].equals("show")) {
-			
+			showHandler(token);
 		} else if (token[0].equals("help")) {
 			helpHandler();
 		} else if (token[0].equals("exit")) {
@@ -36,6 +36,16 @@ public class InputHandler {
 		}
 	}
 	
+	private void showHandler(String[] token) {
+		if (token[1].equals("apparat")) {
+			driver.getApparat();
+		} else {
+			print("Error type correct make command");
+			print("Type 'help' for command information");
+		}
+		
+	}
+
 	private void helpHandler() {
 		print("Use '_' for seperating commands");
 		print("Write the whole command in a single line using the correct commands");
@@ -76,7 +86,7 @@ public class InputHandler {
 		} else if (token[1].equals("ovelse")) {
 			//handler.handle(min,max)
 		} else if (token[1].equals("kategori")) {
-			print(driver.getApparat(token[2]));
+			//
 		} else {
 			print("Error type correct add command");
 			print("Type 'help' for command information");
