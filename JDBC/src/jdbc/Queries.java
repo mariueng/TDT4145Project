@@ -52,14 +52,4 @@ public final class Queries {
 				+ "(\'" + datoTid + "\', " + varighetMin + ", " + "\"" + informasjon + "\", " + form + ", " + prestasjon +");";
 	}
 	
-	//Knytter en øvelse opp mot en økt for å vitne om at den gitte øvelsen inngikk i den gitte økten.
-	public static String CONNECT_OVELSE_TRENINGSOKT(int oktId, int ovelseId) {
-		return "INSERT INTO treningsoktovelse (OektID, OvelseID) VALUES (" + oktId + ", " + ovelseId + ");";
-	}
-	
-	//Se krav 2: Henter de n siste øktene med tilhørende informasjon
-	public static String GET_N_LAST_TRENINGSOKT(int n) {
-		return "SELECT * FROM treningsoekt ORDER BY datotidspunkt DESC LIMIT " + n;
-	}
-	
 }
