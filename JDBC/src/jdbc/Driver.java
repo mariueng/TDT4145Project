@@ -47,7 +47,6 @@ public class Driver {
 	//-----------------------INSERT-METODER--------------------------------------
 	
 	
-	
 	public String addApparat(String Navn, String Beskrivelse) {
 		try {
 			return executeInsertQuery(Queries.INSERT_APPARAT(Navn, Beskrivelse));
