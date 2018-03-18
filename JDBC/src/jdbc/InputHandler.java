@@ -28,7 +28,7 @@ public class InputHandler {
 		} else if (token[0].equals("help")) {
 			
 		} else {
-			print("Type help for help");
+			print("Type 'help' for more information");
 		}
 	}
 
