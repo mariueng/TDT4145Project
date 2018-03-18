@@ -37,12 +37,12 @@ public class Driver {
 	public String executeInsertQuery(String query){
 		System.out.println("Og hit");
 		try {
-			this.myStmt.executeQuery(query);
+			this.myStmt.executeUpdate(query);
 			System.out.println("eller hit");
 			return "Successful";
 		}
 		catch (Exception e) {
-			System.out.println("Fail");
+			e.printStackTrace();
 			return "Unsuccesful";
 		}
 		
