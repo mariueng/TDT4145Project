@@ -27,8 +27,10 @@ public class InputHandler {
 			
 		} else if (token[0].equals("help")) {
 			
+		} else if (token[0].equals("exit")) {
+			
 		} else {
-			print("Type 'help' for more information");
+			System.out.println("Type 'help' for more information");
 		}
 	}
 	
@@ -69,10 +71,5 @@ public class InputHandler {
 		} else {
 			print("Type 'help' for more information");
 		}
-	}
-
-	public void flush() {
-		stream.flush();
-		stream.close();	
 	}
 }
