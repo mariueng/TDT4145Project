@@ -85,7 +85,9 @@ public class Driver {
 	
 	public String addTreningsOkt(String datotid, String varighetMin, String info, String form, String prestasjon) {
 		try {
-			return (String) executeInsertQuery(Queries.INSERT_TRENINGSOKT(convertStringToTimestamp(datotid),  Integer.parseInt(varighetMin), info, 
+
+
+			return (String) executeInsertQuery(Queries.INSERT_TRENINGSOKT(Timestamp.valueOf(datotid),  Integer.parseInt(varighetMin), info, 
 					Integer.parseInt(form), Integer.parseInt(prestasjon)));
 		}
 		catch (Exception e) {
@@ -111,24 +113,8 @@ public class Driver {
 			return "Unsuccessful";
 		}
 	}
-
-//--------------------HELP-METHODS--------------------------
-
-public static Timestamp convertStringToTimestamp(String str_date) {
-    try {
-      DateFormat formatter;
-      formatter = new SimpleDateFormat("dd/MM/yyyy");
-      Date date = (Date) formatter.parse(str_date);
-      Timestamp timeStampDate = new Timestamp(date.getTime());
-
-      return timeStampDate;
-    } 
-    catch (ParseException e) {
-      e.printStackTrace();
-      return null;
-    }
-  }
 }
+
 	
 	// --------------------------------QUERIES IN SQL-FORMAT TEXT CAN BE FOUND IN QUERIES.JAVA---------------//
 	

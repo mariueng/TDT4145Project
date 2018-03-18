@@ -8,7 +8,7 @@ public class Main {
 		InputHandler handler = new InputHandler(System.out);
 		Scanner scanner = new Scanner(System.in);
 		String lastCommand = "";
-		System.out.println("Type 'help' for more information");
+		System.out.println("Type 'help' for command information");
 		while((!lastCommand.equals("exit")) && (scanner.hasNextLine())) {
 			lastCommand = scanner.nextLine();
 			handler.handleInput(lastCommand);
