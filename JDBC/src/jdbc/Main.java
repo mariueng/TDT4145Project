@@ -13,6 +13,8 @@ public class Main {
 			lastCommand = scanner.nextLine();
 			handler.handleInput(lastCommand);
 		}
+		handler.flush();
+		scanner.close();
 
 	}
 }

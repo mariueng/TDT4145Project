@@ -66,5 +66,9 @@ public class InputHandler {
 		}
 		
 	}
-	
+
+	public void flush() {
+		stream.flush();
+		stream.close();	
+	}
 }
