@@ -84,9 +84,9 @@ public class Driver {
 	//-------------------------------SEARCH-METODER---------------------------------------
 	
 	
-	public String getApparat(int id) {
+	public String getApparat(String Navn) {
 		try {
-			return executeReturnQuery(Queries.GET_APPARAT_BY_ID(id));
+			return executeReturnQuery(Queries.GET_APPARAT_BY_NAME(Navn));
 		}
 		catch (Exception e) {
 			return "Unsuccessful";
