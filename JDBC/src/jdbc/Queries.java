@@ -57,4 +57,9 @@ public final class Queries {
 		return "INSERT INTO treningsoktovelse (OektID, OvelseID) VALUES (" + oktId + ", " + ovelseId + ");";
 	}
 	
+	//Se krav 2: Henter de n siste øktene med tilhørende informasjon
+	public static String GET_N_LAST_TRENINGSOKT(int n) {
+		return "SELECT * FROM treningsoekt ORDER BY datotidspunkt DESC LIMIT " + n;
+	}
+	
 }
