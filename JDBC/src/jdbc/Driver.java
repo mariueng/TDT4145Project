@@ -47,7 +47,6 @@ public class Driver {
 	
 	//-----------------------INSERT-METODER--------------------------------------
 	
-	
 	public String addApparat(String Navn, String Beskrivelse) {
 		System.out.println("Kom hit hvertfall");
 		try {
