@@ -38,7 +38,7 @@ public class InputHandler {
 	
 	private void showHandler(String[] token) {
 		if (token[1].equals("apparat")) {
-			driver.getApparat();
+			print(driver.getApparat());
 		} else {
 			print("Error type correct make command");
 			print("Type 'help' for command information");
@@ -86,7 +86,9 @@ public class InputHandler {
 		} else if (token[1].equals("ovelse")) {
 			//handler.handle(min,max)
 		} else if (token[1].equals("kategori")) {
+
 			//
+
 		} else {
 			print("Error type correct add command");
 			print("Type 'help' for command information");
@@ -103,7 +105,11 @@ public class InputHandler {
 			print(driver.addFastMontert(token[2], token[3], token[4], token[5]));
 		} else if (token[1].equals("treningsokt")) {
 			print(driver.addTreningsOkt(token[2], token[3], token[4], token[5], token[6]));
-		} else {
+		} else if (token[1].equals("treningsovelse")) {
+			
+		}
+		
+		else {
 			print("Error type correct add command");
 			print("Type 'help' for command information");
 		}
