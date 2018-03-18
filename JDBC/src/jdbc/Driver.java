@@ -96,7 +96,7 @@ public class Driver {
 		}
 	}
 	
-	//-------------------------------SEARCH-METODER---------------------------------------
+	//-------------------------------SEARCH/SHOW-METODER---------------------------------------
 	
 	
 	public String getApparat() {
@@ -112,6 +112,23 @@ public class Driver {
 			e.printStackTrace();
 			return "Unsuccessful";
 		}
+	}
+	
+	public Object getOvelse(){
+		try {
+			ResultSet rs = (ResultSet) executeReturnQuery(Queries.GET_ALL_OVELSE());
+			String streng = "";
+			while(rs.next()) {
+				streng += rs.getString("Navn")+ "\n";
+			}
+			return streng;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return "Unsuccessful";
+		}
+		
+	
 	}
 }
 
