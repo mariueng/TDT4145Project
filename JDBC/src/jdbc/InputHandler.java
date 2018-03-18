@@ -40,7 +40,8 @@ public class InputHandler {
 		stream.println(string);
 		
 	}
-
+	
+	
 	private void makeHandler(String[] token) {
 		if (token[1].equals("kategori")) {
 			//handler.handle(navn,beskrivelse)
