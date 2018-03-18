@@ -11,7 +11,7 @@ public class Driver {
 	private ResultSet myRs;
 	
 	public Driver() throws SQLException {
-		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/prosjekt?autoReconnect=true&useSSL=false", "root", "");
+		myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/prosjekt?autoReconnect=true&useSSL=false", "root", "root");
 		myStmt = myConn.createStatement();
 	}
 	
