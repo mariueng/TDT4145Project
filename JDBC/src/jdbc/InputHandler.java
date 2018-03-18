@@ -30,7 +30,6 @@ public class InputHandler {
 		} else {
 			print("Type help for help");
 		}
-		
 	}
 
 	private void print(String string) {
