@@ -1,5 +1,8 @@
 package jdbc;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class Driver {
 		
@@ -63,18 +66,19 @@ public class Driver {
 		}
 	}
 	
-	public String addFastMontert(String Navn, Double kg, int sett, int apparatID) {
+	public String addFastMontert(String Navn, String kg, String sett, String apparatID) {
 		try {
-			return executeInsertQuery(Queries.INSERT_FASTMONTERT_OVELSE(Navn, kg, sett, apparatID));
+			return executeInsertQuery(Queries.INSERT_FASTMONTERT_OVELSE(Navn,Double.parseDouble(kg), Integer.parseInt(sett), Integer.parseInt(apparatID)));
 		}
 		catch (Exception e) {
 			return "Unsuccessful";
 		}
 	}
 	
-	public String addTreningsOkt(Timestamp datotid, int varighetMin, String info, int form, int prestasjon) {
+	public String addTreningsOkt(String datotid, String varighetMin, String info, String form, String prestasjon) {
 		try {
-			return executeInsertQuery(Queries.INSERT_TRENINGSOKT(datotid, varighetMin, info, form, prestasjon));
+			return executeInsertQuery(Queries.INSERT_TRENINGSOKT(convertStringToTimestamp(datotid),  Integer.parseInt(varighetMin), info, 
+					Integer.parseInt(form), Integer.parseInt(prestasjon)));
 		}
 		catch (Exception e) {
 			return "Unsuccesfull";
@@ -125,7 +129,24 @@ public class Driver {
 			e.printStackTrace();
 		}*/
 
-	}
+	
+
+//--------------------HELP-METHODS--------------------------
+
+public static Timestamp convertStringToTimestamp(String str_date) {
+    try {
+      DateFormat formatter;
+      formatter = new SimpleDateFormat("dd/MM/yyyy");
+      Date date = (Date) formatter.parse(str_date);
+      Timestamp timeStampDate = new Timestamp(date.getTime());
+
+      return timeStampDate;
+    } catch (ParseException e) {
+      System.out.println("Exception :" + e);
+      return null;
+    }
+  }
+}
 	
 	// --------------------------------QUERIES IN SQL-FORMAT TEXT CAN BE FOUND IN QUERIES.JAVA---------------//
 	
