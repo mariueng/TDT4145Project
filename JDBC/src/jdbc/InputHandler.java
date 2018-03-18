@@ -38,7 +38,9 @@ public class InputHandler {
 	}
 
 	private void makeHandler(String[] token) {
-		//handler.handle(navn, beskrivelse) //se på kategori
+		if (token[1].equals("kategori")) {
+			//handler.handle(navn,beskrivelse)
+		}
 		
 	}
 
@@ -48,23 +50,25 @@ public class InputHandler {
 		} else if (token[1].equals("ovelse")) {
 			//handler.handle(min,max)
 		} else if (token[1].equals("kategori")) {
-			//handler.handle(navn)
+			print(driver.getApparat(token[2]));
+		} else {
+			print("Type 'help' for more information");
 		}
 		
 	}
 
 	private void addHandler(String[] token) {
 		if (token[1].equals("apparat")) {
-			//
-			System.out.println("Apparat");
+			print(driver.addApparat(token[2], token[3]));
 		} else if (token[1].equals("friovelse")) {
-			//
+			print(driver.addFriOvelse(token[2], token[3]));
 		} else if (token[1].equals("fastovelse")) {
-			//
+			print(driver.addFastMontert(token[2], token[3], token[4], token[5]));
 		} else if (token[1].equals("treningsokt")) {
-			//
+			print(driver.addTreningsOkt(token[2], token[3], token[4], token[5], token[6]));
+		} else {
+			print("Type 'help' for more information");
 		}
-		
 	}
 
 	public void flush() {
