@@ -30,12 +30,12 @@ public class InputHandler {
 		} else if (token[0].equals("exit")) {
 			
 		} else {
-			System.out.println("Type 'help' for more information");
+			print("Type 'help' for more information");
 		}
 	}
 	
 	private void print(String string) {
-		stream.println(string);
+		System.out.println(string);
 		
 	}
 
