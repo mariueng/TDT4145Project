@@ -23,6 +23,13 @@ public final class Queries {
 		return "INSERT INTO apparat (Navn, Beskrivelse) VALUES (\"" + navn + "\", \"" + beskrivelse +"\")";
 	}
 	
+	//Se usecase fra innlevering 1: Gitt en apparatID returnerer denne spørringen hvor mange ganger apparatet har blitt brukt den siste måneden
+	public static String GET_APPARAT_USAGE_LAST_MONTH(int apparatId) {
+		return "SELECT COUNT(*) FROM apparat INNER JOIN ovelsefastmontert ON apparat.apparatID = ovelsefastmontert.apparatID INNER JOIN treningsoktovelse ON"
+				+ "ovelsefastmontert.ovelseID = treningsoktovelse.ovelseID INNER JOIN treningsoekt ON treningsoktovelse.oektID = treningsoekt.oektID WHERE apparat.apparatID LIKE "
+				+ apparatId + " AND DatoTidspunkt > (CURRENT_DATE() - INTERVAL 1 MONTH)";
+	}
+	
 	/*
 	 * =============================== ØVELSER =====================================
 	 * Før enhver registrering av øvelse på NEW_OVELSE utføres først for å lage en entitet av superklassen.
