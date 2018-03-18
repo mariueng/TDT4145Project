@@ -12,7 +12,9 @@ public class InputHandler {
 		try {
 			driver = new Driver();
 			this.stream = stream;
-		} catch(Exception e){}
+		} catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	public void handleInput(String input) {
@@ -35,7 +37,7 @@ public class InputHandler {
 	}
 	
 	private void print(String string) {
-		System.out.println(string);
+		stream.println(string);
 		
 	}
 
