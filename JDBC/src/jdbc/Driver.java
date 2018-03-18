@@ -35,11 +35,14 @@ public class Driver {
 		
 	}
 	public String executeInsertQuery(String query){
+		System.out.println("Og hit");
 		try {
 			this.myStmt.executeQuery(query);
+			System.out.println("eller hit");
 			return "Successful";
 		}
 		catch (Exception e) {
+			System.out.println("Fail");
 			return "Unsuccesful";
 		}
 		
@@ -53,6 +56,7 @@ public class Driver {
 			return executeInsertQuery(Queries.INSERT_APPARAT(Navn, Beskrivelse));
 		}
 		catch (Exception e) {
+			System.out.println("Dobbel");
 			return "Unsuccessful";
 		}
 	}
