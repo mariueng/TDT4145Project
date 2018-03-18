@@ -47,6 +47,11 @@ public final class Queries {
 		return "INSERT INTO kategori (Navn, Beskrivelse) VALUES (\"" + navn + "\",\"" + beskrivelse + "\");";
 	}
 	
+	//Knytte en øvelse til en kategori
+	public static String CONNECT_OVELSE_KATEGORI(int ovelseId, String kategorinavn) {
+		return "INSERT INTO ovelseinngaarikategori (OvelseID, Navn) VALUES (" + ovelseId + ",\"" + kategorinavn + "\");";
+	}
+	
 	/*
 	 * ================================= TRENINGSØKTER ===================================
 	 */
