@@ -105,7 +105,11 @@ public class InputHandler {
 			print(driver.addFastMontert(token[2], token[3], token[4], token[5]));
 		} else if (token[1].equals("treningsokt")) {
 			print(driver.addTreningsOkt(token[2], token[3], token[4], token[5], token[6]));
-		} else {
+		} else if (token[1].equals("treningsovelse")) {
+			
+		}
+		
+		else {
 			print("Error type correct add command");
 			print("Type 'help' for command information");
 		}
