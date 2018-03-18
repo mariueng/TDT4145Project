@@ -38,7 +38,7 @@ public class InputHandler {
 	
 	private void showHandler(String[] token) {
 		if (token[1].equals("apparat")) {
-			driver.getApparat();
+			print(driver.getApparat());
 		} else {
 			print("Error type correct make command");
 			print("Type 'help' for command information");
