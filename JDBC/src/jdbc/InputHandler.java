@@ -27,7 +27,7 @@ public class InputHandler {
 		} else if (token[0].equals("show")) {
 			
 		} else if (token[0].equals("help")) {
-			
+			helpHandler();
 		} else if (token[0].equals("exit")) {
 			
 		} else {
@@ -36,6 +36,11 @@ public class InputHandler {
 		}
 	}
 	
+	private void helpHandler() {
+		print("You don't get any help");
+		
+	}
+
 	private void print(String string) {
 		stream.println(string);
 		
