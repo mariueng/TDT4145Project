@@ -45,6 +45,9 @@ public class InputHandler {
 	private void makeHandler(String[] token) {
 		if (token[1].equals("kategori")) {
 			//handler.handle(navn,beskrivelse)
+		} else {
+			print("Error type correct make command");
+			print("Type 'help' for command information");
 		}
 		
 	}
