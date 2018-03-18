@@ -52,6 +52,13 @@ public final class Queries {
 		return "INSERT INTO ovelseinngaarikategori (OvelseID, Navn) VALUES (" + ovelseId + ",\"" + kategorinavn + "\");";
 	}
 	
+	//Spør etter alle øvelser som inngår i gitt kategori, returnerer navnet på de øvelsene som inngår i gitt kategori
+	public static String GET_OVELSE_BY_KATEGORI(String kategorinavn) {
+		return "(SELECT ovelsefastmontert.navn AS Navn FROM ovelsefastmontert NATURAL JOIN ovelse INNER JOIN ovelseinngaarikategori ON ovelse.ovelseID = ovelseinngaarikategori.ovelseID"
+				+ " WHERE ovelseinngaarikategori.navn LIKE \"" + kategorinavn + "\") UNION (SELECT ovelsefriovelse.navn AS Navn FROM ovelsefriovelse NATURAL JOIN ovelse "
+				+ "INNER JOIN ovelseinngaarikategori ON ovelse.ovelseID = ovelseinngaarikategori.ovelseID WHERE ovelseinngaarikategori.navn LIKE \"" + kategorinavn + "\")";
+	}
+	
 	/*
 	 * ================================= TRENINGSØKTER ===================================
 	 */
