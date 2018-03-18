@@ -32,8 +32,8 @@ public class InputHandler {
 		} else if (token[0].equals("exit")) {
 			
 		} else {
-			print("Error");
-			print("Type 'help' for more information");
+			print("Error type corrct command");
+			print("Type 'help' for command information");
 		}
 	}
 	
@@ -58,8 +58,8 @@ public class InputHandler {
 		} else if (token[1].equals("kategori")) {
 			print(driver.getApparat(token[2]));
 		} else {
-			print("Error");
-			print("Type 'help' for more information");
+			print("Error type correct add command");
+			print("Type 'help' for command information");
 		}
 		
 	}
@@ -74,8 +74,8 @@ public class InputHandler {
 		} else if (token[1].equals("treningsokt")) {
 			print(driver.addTreningsOkt(token[2], token[3], token[4], token[5], token[6]));
 		} else {
-			print("Error");
-			print("Type 'help' for more information");
+			print("Error type correct add command");
+			print("Type 'help' for command information");
 		}
 	}
 }
