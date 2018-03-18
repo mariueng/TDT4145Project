@@ -37,7 +37,20 @@ public class InputHandler {
 	}
 	
 	private void helpHandler() {
-		print("You don't get any help");
+		print("Use '_' for seperating commands");
+		print("Write the whole command in a single line using the correct commands");
+		print("Main commands: 'add', 'search', 'make', 'show', 'exit'");
+		print("------------------------------------------------------------------------------");
+		print("add commands:");
+		print("apparat: navn, beskrivelse");
+		print("friovelse: navn, beskrivelse");
+		print("fastovelse: navn, kg, sett, apparat");
+		print("treningsokt: , varighet i min, informasjon, form mellom 0 og 10, presentasjon mellom 0 og 10");
+		print("------------------------------------------------------------------------------");
+		print("search commands:");
+		print("treningsøkt: ");
+		print("ovelse: ");
+		print("kategori: ");
 		
 	}
 
