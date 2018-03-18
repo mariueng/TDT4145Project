@@ -20,6 +20,7 @@ public class Driver {
 			return ""+  this.myStmt.executeQuery(query);
 		}
 		catch (Exception err) {
+			err.printStackTrace();
 			return "Unsuccesful";
 		}
 	}
@@ -30,15 +31,14 @@ public class Driver {
 		return "Successful";
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			return "Unsuccesful";
 		}
 		
 	}
 	public String executeInsertQuery(String query){
-		System.out.println("Og hit");
 		try {
 			this.myStmt.executeUpdate(query);
-			System.out.println("eller hit");
 			return "Successful";
 		}
 		catch (Exception e) {
@@ -51,12 +51,11 @@ public class Driver {
 	//-----------------------INSERT-METODER--------------------------------------
 	
 	public String addApparat(String Navn, String Beskrivelse) {
-		System.out.println("Kom hit hvertfall");
 		try {
 			return executeInsertQuery(Queries.INSERT_APPARAT(Navn, Beskrivelse));
 		}
 		catch (Exception e) {
-			System.out.println("Dobbel");
+			e.printStackTrace();
 			return "Unsuccessful";
 		}
 	}
@@ -66,6 +65,7 @@ public class Driver {
 			return executeInsertQuery(Queries.INSERT_FRIOVELSE(Navn, Beskrivelse));
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			return "Unsuccesful";
 		}
 	}
@@ -75,6 +75,7 @@ public class Driver {
 			return executeInsertQuery(Queries.INSERT_FASTMONTERT_OVELSE(Navn,Double.parseDouble(kg), Integer.parseInt(sett), Integer.parseInt(apparatID)));
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			return "Unsuccessful";
 		}
 	}
@@ -85,6 +86,7 @@ public class Driver {
 					Integer.parseInt(form), Integer.parseInt(prestasjon)));
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			return "Unsuccesfull";
 		}
 	}
@@ -97,43 +99,10 @@ public class Driver {
 			return executeReturnQuery(Queries.GET_APPARAT_BY_NAME(Navn));
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			return "Unsuccessful";
 		}
 	}
-	
-
-	/*
-	public void test() {
-		try {
-			this.myStmt.executeUpdate(Queries.INSERT_TRENINGSOKT(new Timestamp(117, 10,12,15,30,0,0), 40, "Fin økt", 4, 8));
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}*/
-
-
-	/*public static void main(String[] args) {
-		
-		try {
-			Driver driver = new Driver();
-			
-			//Queries
-			ResultSet myRs;
-			myRs = driver.executeReturnQuery("select * from apparat");
-			
-			//Process result
-			while(myRs.next()) {
-				System.out.println("ApparatID: " + myRs.getString("ApparatID") + " Navn: " + myRs.getString("Navn") + 
-				" Beskrivelse: " + myRs.getString("Beskrivelse"));
-			}
-			driver.test();
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}*/
-
-	
 
 //--------------------HELP-METHODS--------------------------
 
@@ -145,8 +114,9 @@ public static Timestamp convertStringToTimestamp(String str_date) {
       Timestamp timeStampDate = new Timestamp(date.getTime());
 
       return timeStampDate;
-    } catch (ParseException e) {
-      System.out.println("Exception :" + e);
+    } 
+    catch (ParseException e) {
+      e.printStackTrace();
       return null;
     }
   }
