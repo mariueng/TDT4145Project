@@ -56,7 +56,7 @@ public class InputHandler {
 		} else if (token[1].equals("ovelse")) {
 			//handler.handle(min,max)
 		} else if (token[1].equals("kategori")) {
-			print(driver.getApparat(token[2]));
+			print(driver.getApparat());
 		} else {
 			print("Error");
 			print("Type 'help' for more information");

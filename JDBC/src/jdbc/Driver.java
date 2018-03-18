@@ -15,9 +15,9 @@ public class Driver {
 		myStmt = myConn.createStatement();
 	}
 	
-	public String executeReturnQuery(String query){
+	private Object executeReturnQuery(String query){
 		try {
-			return ""+  this.myStmt.executeQuery(query);
+			return this.myStmt.executeQuery(query);
 		}
 		catch (Exception err) {
 			err.printStackTrace();
@@ -25,7 +25,7 @@ public class Driver {
 		}
 	}
 
-	public String executeUpdateQuery(String query) {
+	private Object executeUpdateQuery(String query) {
 		try {
 			this.myStmt.executeUpdate(query);
 		return "Successful";
@@ -36,7 +36,7 @@ public class Driver {
 		}
 		
 	}
-	public String executeInsertQuery(String query){
+	private Object executeInsertQuery(String query){
 		try {
 			this.myStmt.executeUpdate(query);
 			return "Successful";
@@ -52,7 +52,7 @@ public class Driver {
 	
 	public String addApparat(String Navn, String Beskrivelse) {
 		try {
-			return executeInsertQuery(Queries.INSERT_APPARAT(Navn, Beskrivelse));
+			return (String) executeInsertQuery(Queries.INSERT_APPARAT(Navn, Beskrivelse));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -62,7 +62,8 @@ public class Driver {
 	
 	public String addFriOvelse(String Navn, String Beskrivelse) {
 		try {
-			return executeInsertQuery(Queries.INSERT_FRIOVELSE(Navn, Beskrivelse));
+			executeInsertQuery(Queries.NEW_OVELSE());
+			return (String) executeInsertQuery(Queries.INSERT_FRIOVELSE(Navn, Beskrivelse));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -70,9 +71,11 @@ public class Driver {
 		}
 	}
 	
-	public String addFastMontert(String Navn, String kg, String sett, String apparatID) {
+	public String addFastMontert(String Navn, String kg, String sett, String apparatNavn){
 		try {
-			return executeInsertQuery(Queries.INSERT_FASTMONTERT_OVELSE(Navn,Double.parseDouble(kg), Integer.parseInt(sett), Integer.parseInt(apparatID)));
+			String apparatid = (String) executeReturnQuery(Queries.GET_APPARAT_ID_BY_NAME(apparatNavn));
+			executeInsertQuery(Queries.NEW_OVELSE());
+			return (String) executeInsertQuery(Queries.INSERT_FASTMONTERT_OVELSE(Navn,Double.parseDouble(kg), Integer.parseInt(sett), Integer.parseInt(apparatid)));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -82,7 +85,7 @@ public class Driver {
 	
 	public String addTreningsOkt(String datotid, String varighetMin, String info, String form, String prestasjon) {
 		try {
-			return executeInsertQuery(Queries.INSERT_TRENINGSOKT(convertStringToTimestamp(datotid),  Integer.parseInt(varighetMin), info, 
+			return (String) executeInsertQuery(Queries.INSERT_TRENINGSOKT(convertStringToTimestamp(datotid),  Integer.parseInt(varighetMin), info, 
 					Integer.parseInt(form), Integer.parseInt(prestasjon)));
 		}
 		catch (Exception e) {
@@ -94,9 +97,14 @@ public class Driver {
 	//-------------------------------SEARCH-METODER---------------------------------------
 	
 	
-	public String getApparat(String Navn) {
+	public String getApparat() {
 		try {
-			return executeReturnQuery(Queries.GET_APPARAT_BY_NAME(Navn));
+			ResultSet rs = (ResultSet) executeReturnQuery(Queries.GET_ALL_APPARAT());
+			String streng = "";
+			while(rs.next()) {
+				streng += rs.getString("Navn") + "\n";
+			}
+			return streng;
 		}
 		catch (Exception e) {
 			e.printStackTrace();
