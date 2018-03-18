@@ -86,5 +86,13 @@ public final class Queries {
 		
 	}
 	
+	//Se oppgave 3: Gitt et tidsintervall og en øvelse returnerer denne alle treningsøktene som innehar denne øvelsen
+	public static String GET_OKT_BY_OVELSE_AND_INTERVAL(int ovelseId, Timestamp intervalStart, Timestamp intervalSlutt) {
+		return "SELECT treningsoekt.* FROM treningsoekt INNER JOIN treningsoktovelse ON treningsoekt.oektid = treningsoktovelse.oektID "
+				+ "WHERE DatoTidspunkt > '" +intervalStart.toString() + "' AND DatoTidspunkt < '" + intervalSlutt.toString() + "' AND treningsoktovelse.oektID = "
+						+ ovelseId + ";";
+
+	}
+	
 	
 }
