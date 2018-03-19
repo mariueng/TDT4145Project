@@ -13,6 +13,12 @@ public final class Queries {
 		return "SELECT Navn FROM apparat";
 	}
 	
+	//Henter alle kategorier
+	public static  String GET_ALL_KATEGORI() {
+		return "SELECT Navn FROM kategori";
+	}
+		
+	
 	//Henter apparat gitt apparatId
 	public static final String GET_APPARAT_BY_ID(int id) {
 		return "SELECT * FROM apparat WHERE ApparatID LIKE " + id;
@@ -48,6 +54,18 @@ public final class Queries {
 	public static String GET_ALL_OVELSE() {
 		return "(SELECT Navn FROM ovelsefastmontert) UNION (SELECT Navn FROM ovelsefriovelse);";
 	}
+	
+	public static String GET_OVELSEID_FROM_OVELSENAVN(String ovelseNavn) {
+		return "(SELECT OvelseID FROM ovelsefastmontert NATURAL JOIN ovelse WHERE ovelsefastmontert.Navn LIKE '" +ovelseNavn+ "')"
+				+ "UNION (SELECT OvelseID FROM ovelsefriovelse NATURAL JOIN ovelse WHERE ovelsefriovelse.Navn LIKE '" +ovelseNavn+ "');";
+	}
+	
+	//Sender inn øvelsenavn, returnere kategori
+		public static String GET_KATEGORI_FROM_OVELSE(String ovelsenavn) {
+			return "SELECT kategori.Navn FROM kategori INNER JOIN ovelseinngaarikategori ON kategori.Navn = ovelseinngaarikategori.Navn "
+					+ "WHERE ovelseinngaarikategori.OvelseID IN (SELECT OvelseID FROM ovelsefriovelse WHERE Navn LIKE '" +ovelsenavn+ "') UNION "
+					+ "(SELECT OvelseID FROM ovelsefastmontert WHERE Navn LIKE '" +ovelsenavn+ "');";
+		}
 	
 	//Lager en ny øvelse, dette er i prinsippet kun et heltall, men tabellen er brukt for å knytte ulike typer øvelser opp mot en superklasse
 	public static String NEW_OVELSE() {
