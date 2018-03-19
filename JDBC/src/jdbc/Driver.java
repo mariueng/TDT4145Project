@@ -194,6 +194,7 @@ public class Driver {
 		}
 	}
 	
+
 	public String findSammeOvelseKategori(String ovelseNavn) { //ALLE ØVELSER SOM ER I SAMME KATEGORI SOM OVELSENAVN
 		try {
 			ResultSet rs = (ResultSet) executeReturnQuery(Queries.GET_OVELSE_BY_KATEGORI(getKategoriFromNavn(ovelseNavn)));
@@ -221,6 +222,7 @@ public class Driver {
 			return "Unsuccessfull";
 		}
 	}
+
 
 	//--------------------------------MAKE-METODER---------------------------------------
 
