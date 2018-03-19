@@ -15,7 +15,7 @@ public final class Queries {
 	
 	//Henter alle kategorier
 	public static  String GET_ALL_KATEGORI() {
-		return "SELECT Navn FROM kategori";
+		return "SELECT * FROM kategori";
 	}
 		
 	

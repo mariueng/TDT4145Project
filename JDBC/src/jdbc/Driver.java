@@ -97,6 +97,8 @@ public class Driver {
 		}
 	}
 	
+	
+	
 	public String addKategori(String navn, String beskrivelse) {
 		try {
 			executeInsertQuery(Queries.INSERT_KATEGORI(navn, beskrivelse));
