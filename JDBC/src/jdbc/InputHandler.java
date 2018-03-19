@@ -78,9 +78,19 @@ public class InputHandler {
 		print("treningsokt: , varighet i min, informasjon, form mellom 0 og 10, presentasjon mellom 0 og 10");
 		print("------------------------------------------------------------------------------");
 		print("search commands:");
+		print("treningsokt: n siste treningsokter");
+		print("kategori: ovelsenavn");
+		print("------------------------------------------------------------------------------");
+		print("show commands:");
+		print("apparat: ");
 		print("treningsokt: ");
 		print("kategori: ");
-		
+		print("ovelse: ");
+		print("------------------------------------------------------------------------------");
+		print("make commands:");
+		print("treningsovelse: oktID, ovelsenavn");
+		print("ovelseikategori: ovelsenavn, kategorinavn");
+		print("------------------------------------------------------------------------------");
 	}
 
 	private void print(String string) {
