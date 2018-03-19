@@ -22,10 +22,10 @@ public class InputHandler {
 			addHandler(token);
 		} else if (token[0].equals("search")) {
 			searchHandler(token);
-		} else if (token[0].equals("make")) {
-			makeHandler(token);
 		} else if (token[0].equals("show")) {
 			showHandler(token);
+		} else if (token[0].equals("make")) {
+			makeHandler(token);
 		} else if (token[0].equals("help")) {
 			helpHandler();
 		} else if (token[0].equals("exit")) {
@@ -36,11 +36,29 @@ public class InputHandler {
 		}
 	}
 	
+	private void makeHandler(String[] token) {
+		if (token[1].equals("treningsovelse")) {
+			print(driver.makeTreningOvelse(token[2], token[3]));
+		} else if (token[1].equals("ovelseikategori")) {
+			print(driver.ovelseIKategori(token[2],token[3]));
+		} else {
+			print("Error type correct make command");
+			print("Type 'help' for command information");
+		}
+		
+	}
+
 	private void showHandler(String[] token) {
 		if (token[1].equals("apparat")) {
 			print(driver.getApparat());
+		} else if (token[1].equals("treningsokt")) {
+			print(driver.getTreningsOkt());
+		} else if (token[1].equals("kategori")) {
+			print(driver.getKategori());
+		} else if (token[1].equals("ovelse")) {
+			print(driver.getOvelse());
 		} else {
-			print("Error type correct make command");
+			print("Error type correct show command");
 			print("Type 'help' for command information");
 		}
 		
@@ -49,7 +67,8 @@ public class InputHandler {
 	private void helpHandler() {
 		print("Use '_' for seperating commands");
 		print("Write the whole command in a single line using the correct commands");
-		print("Main commands: 'add', 'search', 'make', 'show', 'exit'");
+		print("------------------------------------------------------------------------------");
+		print("Main commands: 'add', 'search', 'show', 'exit'");
 		print("------------------------------------------------------------------------------");
 		print("add commands:");
 		print("apparat: navn, beskrivelse");
@@ -58,8 +77,7 @@ public class InputHandler {
 		print("treningsokt: , varighet i min, informasjon, form mellom 0 og 10, presentasjon mellom 0 og 10");
 		print("------------------------------------------------------------------------------");
 		print("search commands:");
-		print("treningsøkt: ");
-		print("ovelse: ");
+		print("treningsokt: ");
 		print("kategori: ");
 		
 	}
@@ -68,29 +86,14 @@ public class InputHandler {
 		stream.println(string);
 		
 	}
-	
-	
-	private void makeHandler(String[] token) {
-		if (token[1].equals("kategori")) {
-			//handler.handle(navn,beskrivelse)
-		} else {
-			print("Error type correct make command");
-			print("Type 'help' for command information");
-		}
-		
-	}
 
 	private void searchHandler(String[] token) {
 		if (token[1].equals("treningsokt")) {
-			//handler.handle(n siste treningsøkter)
-		} else if (token[1].equals("ovelse")) {
-			//handler.handle(min,max)
+			print(driver.getNTreningsokt(token[2]));
 		} else if (token[1].equals("kategori")) {
-
-			//
-
+			print(driver.findSammeOvelseKategori(token[2]));
 		} else {
-			print("Error type correct add command");
+			print("Error type correct search command");
 			print("Type 'help' for command information");
 		}
 		
@@ -105,11 +108,9 @@ public class InputHandler {
 			print(driver.addFastMontert(token[2], token[3], token[4], token[5]));
 		} else if (token[1].equals("treningsokt")) {
 			print(driver.addTreningsOkt(token[2], token[3], token[4], token[5], token[6]));
-		} else if (token[1].equals("treningsovelse")) {
-			
-		}
-		
-		else {
+		} else if (token[1].equals("kategori")) {
+			print(driver.addKategori(token[2],token[3]));
+		} else {
 			print("Error type correct add command");
 			print("Type 'help' for command information");
 		}

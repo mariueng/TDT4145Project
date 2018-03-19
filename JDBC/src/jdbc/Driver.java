@@ -96,7 +96,10 @@ public class Driver {
 		}
 	}
 	
-	//-------------------------------SEARCH-METODER---------------------------------------
+	public String addKategori(String navn, String beskrivelse) {
+		return "";
+	}
+	//-------------------------------SHOW-METODER---------------------------------------
 	
 	
 	public String getApparat() {
@@ -113,9 +116,45 @@ public class Driver {
 			return "Unsuccessful";
 		}
 	}
-}
-
 	
+	public String getTreningsOkt() {
+		return "";
+	}
+	
+	public String getKategori() {
+		return "";
+	}
+	
+	public String getOvelse() {
+		return "";
+	}
+	
+	//-------------------------------SEARCH-METODER-------------------------------------
+	
+	public String getNTreningsokt(String n) {
+		//handler.handle(n siste treningsøkter)
+		return "";
+	}
+	
+	public String ovelseMellom(String min, String max) {
+		return "";
+	}
+	
+	public String findSammeOvelseKategori(String ovelseNavn) {
+		return "";
+	}
+
+	//--------------------------------MAKE-METODER---------------------------------------
+
+	public String ovelseIKategori(String ovelseNavn, String kategoriNavn) {
+		return "";
+	}
+
+	public String makeTreningOvelse(String OktID, String ovelseNavn) {
+		return "";
+	}
+
+}
 	// --------------------------------QUERIES IN SQL-FORMAT TEXT CAN BE FOUND IN QUERIES.JAVA---------------//
 	
 	
