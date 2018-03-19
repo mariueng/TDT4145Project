@@ -48,6 +48,7 @@ public class InputHandler {
 		
 	}
 
+	
 	private void showHandler(String[] token) {
 		if (token[1].equals("apparat")) {
 			print(driver.getApparat());

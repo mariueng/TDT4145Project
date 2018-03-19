@@ -91,7 +91,7 @@ public final class Queries {
 	
 	//Henter alle treningsøkter returnerer oektID og Dato
 	public static String GET_ALL_TRENINGSOEKT() {
-		return "SELECT oektID, DatoTidspunkt FROM treningsoekt";
+		return "SELECT oektID, DatoTidspunkt, Informasjon FROM treningsoekt";
 	}
 	
 	

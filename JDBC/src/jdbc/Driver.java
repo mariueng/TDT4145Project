@@ -116,6 +116,22 @@ public class Driver {
 			return "Unsuccessful";
 		}
 	}
+
+	public String getOvelse(){
+		try {
+			ResultSet rs = (ResultSet) executeReturnQuery(Queries.GET_ALL_OVELSE());
+			String streng = "";
+			while(rs.next()) {
+				streng += rs.getString("Navn")+ "\n";
+			}
+			return streng;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return "Unsuccessful";
+		}
+		
+	}
 	
 	public String getTreningsOkt() {
 		return "";
@@ -125,9 +141,6 @@ public class Driver {
 		return "";
 	}
 	
-	public String getOvelse() {
-		return "";
-	}
 	
 	//-------------------------------SEARCH-METODER-------------------------------------
 	
