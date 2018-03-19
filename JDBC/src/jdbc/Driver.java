@@ -149,10 +149,6 @@ public class Driver {
 		return "";
 	}
 	
-	public String ovelseMellom(String min, String max) {
-		return "";
-	}
-	
 	public String findSammeOvelseKategori(String ovelseNavn) {
 		return "";
 	}
