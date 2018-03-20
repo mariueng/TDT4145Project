@@ -191,7 +191,6 @@ public class Driver {
 			}
 			return streng;
 		} catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessfull";
 		}
 	}
@@ -242,7 +241,6 @@ public class Driver {
 					Integer.parseInt(getOvelseIDFromOvelseNavn(ovelseNavn))));
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccesful";
 		}
 	}
