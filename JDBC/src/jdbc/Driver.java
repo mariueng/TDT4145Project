@@ -232,7 +232,6 @@ public class Driver {
 			return "Unsuccesful";
 		}
 	}
-
 }
 	// --------------------------------QUERIES IN SQL-FORMAT TEXT CAN BE FOUND IN QUERIES.JAVA---------------//
 	
