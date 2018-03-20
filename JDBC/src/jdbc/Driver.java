@@ -134,7 +134,19 @@ public class Driver {
 	}
 	
 	public String getTreningsOkt() {//HENTER ALLE TRENINGSØKTER (ØKT-ID, DATO BESKRIVELSE)
-		return "";
+		try {
+			ResultSet rs = (ResultSet) executeReturnQuery(Queries.GET_ALL_TRENINGSOEKT());
+			String streng = "";
+			while(rs.next()) {
+				streng += "ØktID: "+ rs.getString("OektID") + " DatoTidspunkt: " + rs.getString("DatoTidspunkt") + " Beskrivelse: " + 
+			rs.getString("Informasjon") + "\n";
+			}
+			return streng;
+		}
+		catch (Exception e) {
+			return "Unsuccessful";
+		}
+		
 	}
 	
 	public String getKategori() { //HENTER ALLE KATEOGRIER (NAVN)
