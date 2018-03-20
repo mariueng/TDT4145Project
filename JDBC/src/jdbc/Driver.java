@@ -21,7 +21,6 @@ public class Driver {
 			return this.myStmt.executeQuery(query);
 		}
 		catch (Exception err) {
-			err.printStackTrace();
 			return "Unsuccesful";
 		}
 	}
@@ -32,7 +31,6 @@ public class Driver {
 		return "Successful";
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccesful";
 		}
 		
@@ -43,7 +41,6 @@ public class Driver {
 			return "Successful";
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccesful";
 		}
 		
@@ -56,7 +53,6 @@ public class Driver {
 			return (String) executeInsertQuery(Queries.INSERT_APPARAT(Navn, Beskrivelse));
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessful";
 		}
 	}
@@ -67,7 +63,6 @@ public class Driver {
 			return (String) executeInsertQuery(Queries.INSERT_FRIOVELSE(Navn, Beskrivelse));
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccesful";
 		}
 	}
@@ -79,7 +74,6 @@ public class Driver {
 			return (String) executeInsertQuery(Queries.INSERT_FASTMONTERT_OVELSE(Navn,Double.parseDouble(kg), Integer.parseInt(sett), Integer.parseInt(apparatid)));
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessful";
 		}
 	}
@@ -92,7 +86,6 @@ public class Driver {
 					Integer.parseInt(form), Integer.parseInt(prestasjon)));
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccesfull";
 		}
 	}
@@ -105,7 +98,6 @@ public class Driver {
 			return "Successful";
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessful";
 		}
 	}
@@ -122,7 +114,6 @@ public class Driver {
 			return streng;
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessful";
 		}
 	}
@@ -137,7 +128,6 @@ public class Driver {
 			return streng;
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessful";
 		}
 		
@@ -157,7 +147,6 @@ public class Driver {
 			return streng;
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessful";
 		}
 	}
@@ -177,7 +166,6 @@ public class Driver {
 			return streng;
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessful";
 		}
 	}
@@ -191,7 +179,6 @@ public class Driver {
 			}
 			return streng;
 		} catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessfull";
 		}
 	}
@@ -206,7 +193,6 @@ public class Driver {
 			}
 			return streng;
 		} catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessfull";
 		}
 	}
@@ -220,7 +206,6 @@ public class Driver {
 			}
 			return streng;
 		} catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccessfull";
 		}
 	}
@@ -233,7 +218,6 @@ public class Driver {
 			return (String) executeInsertQuery(Queries.CONNECT_OVELSE_KATEGORI(Integer.parseInt(getOvelseIDFromOvelseNavn(ovelseNavn)), kategoriNavn));
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccesful";
 		}
 	}
@@ -245,7 +229,6 @@ public class Driver {
 					Integer.parseInt(getOvelseIDFromOvelseNavn(ovelseNavn))));
 		}
 		catch (Exception e) {
-			e.printStackTrace();
 			return "Unsuccesful";
 		}
 	}
