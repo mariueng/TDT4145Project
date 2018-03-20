@@ -38,9 +38,15 @@ public class InputHandler {
 	
 	private void makeHandler(String[] token) {
 		if (token[1].equals("treningsovelse")) {
-			print(driver.makeTreningOvelse(token[2], token[3]));
+			if (token.length != 4) {
+				wrongSizeHandler();
+			} else {
+				print(driver.makeTreningOvelse(token[2], token[3]));}
 		} else if (token[1].equals("ovelseikategori")) {
-			print(driver.ovelseIKategori(token[2],token[3]));
+			if (token.length != 4) {
+				wrongSizeHandler();
+			} else {
+				print(driver.ovelseIKategori(token[2],token[3]));}
 		} else {
 			print("Error type correct make command");
 			print("Type 'help' for command information");
@@ -49,15 +55,32 @@ public class InputHandler {
 	}
 
 	
+	private void wrongSizeHandler() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	private void showHandler(String[] token) {
 		if (token[1].equals("apparat")) {
-			print(driver.getApparat());
+			if (token.length != 2) {
+				wrongSizeHandler();
+			} else {
+				print(driver.getApparat());}
 		} else if (token[1].equals("treningsokt")) {
-			print(driver.getTreningsOkt());
+			if (token.length != 2) {
+				wrongSizeHandler();
+			} else {
+				print(driver.getTreningsOkt());}
 		} else if (token[1].equals("kategori")) {
-			print(driver.getKategori());
+			if (token.length != 2) {
+				wrongSizeHandler();
+			} else {
+				print(driver.getKategori());}
 		} else if (token[1].equals("ovelse")) {
-			print(driver.getOvelse());
+			if (token.length != 2) {
+				wrongSizeHandler();
+			} else {
+				print(driver.getOvelse());}
 		} else {
 			print("Error type correct show command");
 			print("Type 'help' for command information");
@@ -100,9 +123,15 @@ public class InputHandler {
 
 	private void searchHandler(String[] token) {
 		if (token[1].equals("treningsokt")) {
-			print(driver.getNTreningsokt(token[2]));
+			if (token.length != 3) {
+				wrongSizeHandler();
+			} else {
+				print(driver.getNTreningsokt(token[2]));}
 		} else if (token[1].equals("kategori")) {
-			print(driver.findSammeOvelseKategori(token[2]));
+			if (token.length != 3) {
+				wrongSizeHandler();
+			} else {
+				print(driver.findSammeOvelseKategori(token[2]));}
 		} else {
 			print("Error type correct search command");
 			print("Type 'help' for command information");
@@ -112,15 +141,30 @@ public class InputHandler {
 
 	private void addHandler(String[] token) {
 		if (token[1].equals("apparat")) {
-			print(driver.addApparat(token[2], token[3]));
+			if (token.length != 4) {
+				wrongSizeHandler();
+			} else {
+				print(driver.addApparat(token[2], token[3]));}
 		} else if (token[1].equals("friovelse")) {
-			print(driver.addFriOvelse(token[2], token[3]));
+			if (token.length != 4) {
+				wrongSizeHandler();
+			} else {
+				print(driver.addFriOvelse(token[2], token[3]));}
 		} else if (token[1].equals("fastovelse")) {
-			print(driver.addFastMontert(token[2], token[3], token[4], token[5]));
+			if (token.length != 6) {
+				wrongSizeHandler();
+			} else {
+				print(driver.addFastMontert(token[2], token[3], token[4], token[5]));}
 		} else if (token[1].equals("treningsokt")) {
-			print(driver.addTreningsOkt(token[2], token[3], token[4], token[5], token[6]));
+			if (token.length != 7) {
+				wrongSizeHandler();
+			} else {
+				print(driver.addTreningsOkt(token[2], token[3], token[4], token[5], token[6]));}
 		} else if (token[1].equals("kategori")) {
-			print(driver.addKategori(token[2],token[3]));
+			if (token.length != 4) {
+				wrongSizeHandler();
+			} else {
+				print(driver.addKategori(token[2],token[3]));}
 		} else {
 			print("Error type correct add command");
 			print("Type 'help' for command information");
