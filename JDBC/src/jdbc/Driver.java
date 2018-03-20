@@ -187,10 +187,11 @@ public class Driver {
 			ResultSet rs = (ResultSet) executeReturnQuery(Queries.GET_OVELSEID_FROM_OVELSENAVN(ovelsenavn));
 			String streng ="";
 			while(rs.next()) {
-				streng += rs.getString("Navn");
+				streng += rs.getString("OvelseID");
 			}
 			return streng;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return "Unsuccessfull";
 		}
 	}
@@ -241,6 +242,7 @@ public class Driver {
 					Integer.parseInt(getOvelseIDFromOvelseNavn(ovelseNavn))));
 		}
 		catch (Exception e) {
+			e.printStackTrace();
 			return "Unsuccesful";
 		}
 	}
