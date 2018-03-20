@@ -56,7 +56,7 @@ public class InputHandler {
 
 	
 	private void wrongSizeHandler() {
-		// TODO Auto-generated method stub
+		print("Write the parameters of the methode correct");
 		
 	}
 
