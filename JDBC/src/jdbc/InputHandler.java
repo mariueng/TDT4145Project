@@ -85,7 +85,6 @@ public class InputHandler {
 			print("Error type correct show command");
 			print("Type 'help' for command information");
 		}
-		
 	}
 
 	private void helpHandler() {

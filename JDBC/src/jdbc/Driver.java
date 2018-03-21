@@ -103,7 +103,6 @@ public class Driver {
 	}
 	//-------------------------------SHOW-METODER---------------------------------------
 	
-	
 	public String getApparat() {
 		try {
 			ResultSet rs = (ResultSet) executeReturnQuery(Queries.GET_ALL_APPARAT());

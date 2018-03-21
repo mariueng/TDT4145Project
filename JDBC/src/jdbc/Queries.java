@@ -3,7 +3,7 @@ package jdbc;
 import java.sql.Timestamp;
 
 public final class Queries {
-	
+
 	/*
 	 * ================================ APPARATER ===================================
 	 */
