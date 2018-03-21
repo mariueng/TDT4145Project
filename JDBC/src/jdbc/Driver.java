@@ -69,9 +69,10 @@ public class Driver {
 	
 	public String addFastMontert(String Navn, String kg, String sett, String apparatNavn){
 		try {
-			String apparatid = (String) executeReturnQuery(Queries.GET_APPARAT_ID_BY_NAME(apparatNavn));
+			//String apparatid = (String) executeReturnQuery(Queries.GET_APPARAT_ID_BY_NAME(apparatNavn));
+			//System.out.println(apparatid);
 			executeInsertQuery(Queries.NEW_OVELSE());
-			return (String) executeInsertQuery(Queries.INSERT_FASTMONTERT_OVELSE(Navn,Double.parseDouble(kg), Integer.parseInt(sett), Integer.parseInt(apparatid)));
+			return (String) executeInsertQuery(Queries.INSERT_FASTMONTERT_OVELSE(Navn,Double.parseDouble(kg), Integer.parseInt(sett), Integer.parseInt(apparatNavn)));
 		}
 		catch (Exception e) {
 			return "Unsuccessful";
