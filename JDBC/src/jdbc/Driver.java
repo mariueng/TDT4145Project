@@ -109,7 +109,7 @@ public class Driver {
 			ResultSet rs = (ResultSet) executeReturnQuery(Queries.GET_ALL_APPARAT());
 			String streng = "";
 			while(rs.next()) {
-				streng += rs.getString("Navn") + "\n";
+				streng += "ApparatID: " + rs.getString("ApparatID") + " Navn: " + rs.getString("Navn") +  "\n";
 			}
 			return streng;
 		}

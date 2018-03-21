@@ -10,7 +10,7 @@ public final class Queries {
 	
 	//Henter alle apparater
 	public static String GET_ALL_APPARAT() {
-		return "SELECT Navn FROM apparat";
+		return "SELECT * FROM apparat";
 	}
 	
 	//Henter alle kategorier
